@@ -21,10 +21,11 @@ Tienes un plazo máximo de **6 días** para completar este ejercicio.
 
 5. **Instrucciones Adicionales**: Consulta y sigue las instrucciones detalladas en el archivo PDF adjunto en este repositorio.
 
-6. **Subida del Código**: Una vez hayas finalizado el desarrollo, haz un push de tus cambios a tu fork en GitHub.
-    - Desde tu fork, crea un pull request hacia el repositorio original.
-    - En el mensaje o descripción del pull request, asegúrate de detallar cualquier instrucción o comentario que consideres relevante para la revisión.
-    - 
+6. **Envío del Trabajo a través de tu Fork**: 
+    - Desarrolla tu solución y haz un push de tus cambios a tu fork en GitHub.
+    - En lugar de hacer un pull request, envía directamente el enlace de tu fork a isi@cannactiva.com para que podamos revisar tu trabajo.
+    - Asegúrate de que tu fork sea accesible para nosotros, ya sea haciéndolo público temporalmente o invitándonos como colaboradores. En el correo, indica que has completado el ejercicio.
+
 7. **Notificación de Finalización**: Envía un correo electrónico a [isi@cannactiva.com](mailto:isi@cannactiva.com) informando que has terminado el ejercicio.
 
 ¡Buena suerte y esperamos ver tu trabajo pronto!
