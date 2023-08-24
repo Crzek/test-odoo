@@ -1,2 +1,2 @@
 # test-odoo
-Level Test Odoo
+Odoo Proficiency Test
