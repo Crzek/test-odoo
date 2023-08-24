@@ -22,7 +22,7 @@ Tienes un plazo máximo de **6 días** para completar este ejercicio.
 5. **Instrucciones Adicionales**: Consulta y sigue las instrucciones detalladas en el archivo PDF adjunto en este repositorio.
 
 6. **Envío del Trabajo a través de tu Fork**: 
-    - Desarrolla tu solución y haz un push de tus cambios a tu fork en GitHub.
+    - Desarrolla tu solución y haz un push de tus cambios a tu fork personal.
     - En lugar de hacer un pull request, envía directamente el enlace de tu fork a isi@cannactiva.com para que podamos revisar tu trabajo.
     - Asegúrate de que tu fork sea accesible para nosotros, ya sea haciéndolo público temporalmente o invitándonos como colaboradores. En el correo, indica que has completado el ejercicio.
 
