@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!-- Vista Tree -->
+        <record id="box_view_tree" model="ir.ui.view">
+            <field name="name">box.view.tree</field>
+            <field name="model">to.box</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name" />
+                    <field name="type_id" />
+                    <field name="provider_id" />
+                </tree>
+            </field>
+        </record>
+
+        <!-- Vista Form -->
+        <record id="box_view_form" model="ir.ui.view">
+            <field name="name">box.view.form</field>
+            <field name="model">to.box</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group>
+                            <field name="name" />
+                            <field name="type_id" />
+                            <field name="provider_id" />
+                        </group>
+                        <notebook>
+                            <page string="Productos Asociados">
+                                <field name="product_ids" widget="many2many_tags" />
+                            </page>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <!-- Vista Pivot -->
+        <record id="box_view_pivot" model="ir.ui.view">
+            <field name="name">box.view.pivot</field>
+            <field name="model">to.box</field>
+            <field name="arch" type="xml">
+                <pivot>
+                    <!-- Define las columnas y filas de la vista pivot -->
+                </pivot>
+            </field>
+        </record>
+
+
+        <!-- ACTIONS -->
+        <!-- Acción Tree -->
+        <record id="box_action_tree" model="ir.actions.act_window">
+            <field name="name">Action Cajas</field>
+            <field name="res_model">to.box</field>
+            <field name="view_mode">tree,form,pivot</field>
+        </record>
+
+
+        <!-- action form  -->
+        <record id="box_action_form" model="ir.actions.act_window">
+            <field name="name">Action Cajas</field>
+            <field name="res_model">to.box</field>
+            <field name="view_mode">form</field>
+        </record>
+
+        <!-- action pivot -->
+        <record id="box_action_pivot" model="ir.actions.act_window">
+            <field name="name">Action Cajas</field>
+            <field name="res_model">to.box</field>
+            <field name="view_mode">pivot</field>
+        </record>
+
+        <!-- 3 MENUS -->
+        <!-- Menu Tree -->
+        <menuitem id="box_menu_tree" name="Cajas"
+            action="box_action_tree" />
+        <!-- menu from  -->
+        <!-- <menuitem id="box_menu_form" name="Cajas form"
+            action="box_action_form" /> -->
+        <!-- menu pivot -->
+        <!-- <menuitem id="box_menu_pivot" name="Cajas pivot"
+            action="box_action_pivot" /> -->
+
+
+    </data>
+</odoo>

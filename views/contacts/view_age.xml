@@ -23,7 +23,7 @@
             <xpath expr="//sheet/notebook/page[@name='internal_notes']" position="after">
                 <page name="products_list" string="Productos comprados">
                     <tree>
-                        <field name="products" />
+                        <field name="products" domain="[('contact_id', '=', parent_id)]" />
                     </tree>
                 </page>
             </xpath>
