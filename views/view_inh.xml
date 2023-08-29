@@ -1,0 +1,34 @@
+<!-- <?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <!-- Definición de registros y vistas aquí -->
+    <record id="view_todo_tree" model="ir.ui.view">
+        <field name="name">todo.tree</field>
+        <field name="model">ot.todo</field>
+        <field name="arch" type="xml">
+            <!-- Contenido Vista -->
+            <tree string="Lista de Cosas">
+                <field name="name" />
+                <field name="status" />
+            </tree>
+        </field>
+    </record>
+
+    <!-- Definición de acción -->
+    <record id="todo_action" model="ir.actions.act_window">
+        <field name="name">lista todo</field>
+        <field name="res_model">ot.todo</field>
+        <!-- Vistas permitidas -->
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <!-- Definición de menú -->
+    <menuitem
+        id="todo_menu"
+        name="Todo"
+        action="todo_action"
+        parent=""
+        sequence="10"/>
+
+
+
+</odoo> -->
