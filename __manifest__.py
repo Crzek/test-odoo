@@ -8,7 +8,7 @@
     'license': 'AGPL-3',
     'category': 'Extra Tools',
     'summary': 'Short summary.',
-    'depeds': ['base', 'contacts', 'stock', 'product'],
+    'depends': ['base', 'contacts', 'stock', 'product'],
     'data': [
         'views/contacts/view_age.xml',
         # 'views/stock/view_inh.xml',

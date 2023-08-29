@@ -3,35 +3,30 @@
     <record id="contact_view_inh_form" model="ir.ui.view">
         <field name="name">contact.view.inh.form</field>
         <field name="model">res.partner</field>
-        <field name="inherit_id" ref="base.view_partner_form"/>
+        <field name="inherit_id" ref="base.view_partner_form" />
         <field name="arch" type="xml">
 
-			<!-- insertar despues del campo name  (after /before) -->
+            <!-- insertar despues del campo name  (after /before) -->
             <field name="function" position="before">
                 <field name="age" placeholder="Introduce edad" />
             </field>
-  
 
-                        
         </field>
     </record>
 
-    <!-- añadir pestaña de Lista de productos comprados por usuario -->
-    <record id="contact_view_inh_notebook" model="ir.ui.view">
-        <field name="name">contact.view.inh.notebook</field>
+    <!-- nueva pestaña llamada productos comprados -->
+    <record id="stock_picking_inh_notebook" model="ir.ui.view">
+        <field name="name">stock.picking.inh.notebook</field>
         <field name="model">res.partner</field>
-        <field name="inherit_id" ref="base.view_partner_form"/>
+        <field name="inherit_id" ref="base.view_partner_form" />
         <field name="arch" type="xml">
-            <notebook position="inside">
-                <page string="Productos comprados">
-                    <field name="product_ids" widget="many2many_tags" />
+            <xpath expr="//sheet/notebook/page[@name='internal_notes']" position="after">
+                <page name="products_list" string="Productos comprados">
+                    <tree>
+                        <field name="products" />
+                    </tree>
                 </page>
-            </notebook>
-        </field> 
-
-
-           
-
+            </xpath>
+        </field>
     </record>
-
 </odoo>

@@ -8,14 +8,14 @@ class Contact_irh(models.Model):
     # campos
     age = fields.Integer(string="Edad")
     products = fields.One2many(
-        comodel_name='product.product',  # tabla a la que se relaciona
+        comodel_name='stock.picking',  # tabla a la que se relaciona
         inverse_name='contact_id',  # campo de la tabla relacionada
         string="Productos"  # nombre del campo
     )
 
 
 class Stock_irh(models.Model):
-    _inherit = ['product.product']
+    _inherit = ['stock.picking']
 
     contact_id = fields.Many2one(
         comodel_name='res.partner',  # tabla a la que se relaciona
@@ -51,6 +51,6 @@ class Box(models.Model):
         string="Proveedor"
     )
     product = fields.Many2one(
-        comodel_name='product.product',
+        comodel_name='stock.picking',
         string="Producto"
     )
