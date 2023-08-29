@@ -51,7 +51,7 @@
         <!-- ACTIONS -->
         <!-- Acción Tree -->
         <record id="box_action_tree" model="ir.actions.act_window">
-            <field name="name">Action Cajas</field>
+            <field name="name">Lista Cajas</field>
             <field name="res_model">to.box</field>
             <field name="view_mode">tree,form,pivot</field>
         </record>
@@ -59,14 +59,14 @@
 
         <!-- action form  -->
         <record id="box_action_form" model="ir.actions.act_window">
-            <field name="name">Action Cajas</field>
+            <field name="name">Crear Caja</field>
             <field name="res_model">to.box</field>
             <field name="view_mode">form</field>
         </record>
 
         <!-- action pivot -->
         <record id="box_action_pivot" model="ir.actions.act_window">
-            <field name="name">Action Cajas</field>
+            <field name="name">Cajas</field>
             <field name="res_model">to.box</field>
             <field name="view_mode">pivot</field>
         </record>
