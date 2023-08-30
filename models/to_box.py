@@ -32,3 +32,9 @@ class Box(models.Model):
         comodel_name='product.product',
         string="Producto"
     )
+
+    # def _compute_display_name(self):
+    #     for box in self:
+    #         box.display_name = box.name + '_' + str(box.id)
+    #
+    # display_name = fields.Char(compute='_compute_display_name')

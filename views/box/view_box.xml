@@ -6,10 +6,11 @@
             <field name="name">box.view.tree</field>
             <field name="model">to.box</field>
             <field name="arch" type="xml">
-                <tree>
+                <tree string="Lista Cajas" >
                     <field name="name" />
                     <field name="type_id" />
                     <field name="provider_id" />
+                    <field name="product_ids" />
                 </tree>
             </field>
         </record>
@@ -19,7 +20,7 @@
             <field name="name">box.view.form</field>
             <field name="model">to.box</field>
             <field name="arch" type="xml">
-                <form>
+                <form string="Crear caja">
                     <sheet>
                         <group>
                             <field name="name" />
@@ -28,7 +29,7 @@
                         </group>
                         <notebook>
                             <page string="Productos Asociados">
-                                <field name="product_ids" widget="many2many_tags" />
+                                <field name="product_ids"  />
                             </page>
                         </notebook>
                     </sheet>
@@ -37,15 +38,24 @@
         </record>
 
         <!-- Vista Pivot -->
-        <record id="box_view_pivot" model="ir.ui.view">
-            <field name="name">box.view.pivot</field>
-            <field name="model">to.box</field>
-            <field name="arch" type="xml">
-                <pivot>
-                    <!-- Define las columnas y filas de la vista pivot -->
-                </pivot>
-            </field>
-        </record>
+    <record id="box_view_pivot" model="ir.ui.view">
+        <field name="name">box.view.pivot</field>
+        <field name="model">to.box</field>
+        <field name="arch" type="xml">
+            <pivot string="Pivot view">
+                <!-- Definir filas y columnas -->
+                <field name="product_ids" type="col"/>
+                <field name="provider_id" type="row"/>
+                <field name="product_ids" type="measure" operator="count"/>
+
+                <!-- provider_id=1 -->
+<!--                <filter name="provider_filter" string="Filtrar por Proveedor" >-->
+<!--&lt;!&ndash;                    <domain>[('provider_id', '=', 1)]</domain>&ndash;&gt;-->
+<!--                </filter>-->
+            </pivot>
+        </field>
+    </record>
+
 
 
         <!-- ACTIONS -->
@@ -66,21 +76,29 @@
 
         <!-- action pivot -->
         <record id="box_action_pivot" model="ir.actions.act_window">
-            <field name="name">Cajas</field>
+            <field name="name">Stats</field>
             <field name="res_model">to.box</field>
             <field name="view_mode">pivot</field>
+<!--            <field name="domain">[('provider_id', '=', '1')]</field>-->
         </record>
 
-        <!-- 3 MENUS -->
-        <!-- Menu Tree -->
-        <menuitem id="box_menu_tree" name="Cajas"
-            action="box_action_tree" />
+        <!--  MENUS principal-->
+        <menuitem id="box_menu" name="Gestión Cajas"/>
+        <!-- submenu-->
+        <menuitem id="box_menu_main" name="Cajas"
+            action="box_action_tree" parent="box_menu" />
+
+
+        <!--subemenu del submenu-->
+        <!-- menu tree -->
+        <menuitem id="box_menu_tree" name="Lista Caja"
+            action="box_action_tree" parent="box_menu_main" />
         <!-- menu from  -->
-        <!-- <menuitem id="box_menu_form" name="Cajas form"
-            action="box_action_form" /> -->
+        <menuitem id="box_menu_form" name="Crear Caja"
+            action="box_action_form"  parent="box_menu_main" />
         <!-- menu pivot -->
-        <!-- <menuitem id="box_menu_pivot" name="Cajas pivot"
-            action="box_action_pivot" /> -->
+        <menuitem id="box_menu_pivot" name="Pivot"
+            action="box_action_pivot" parent="box_menu_main" />
 
 
     </data>
