@@ -12,8 +12,7 @@ class Box(models.Model):
             ('marcas', 'Marcas'),
             ('decorada', 'Decorada')
         ],
-        default='Standard'
-
+        default='standard'  # Debes coincidir con el valor del primer elemento en la selección
     )
     type_id = fields.Selection(
         string="Tipo de caja",
@@ -22,15 +21,18 @@ class Box(models.Model):
             ('normal', 'Capa normal'),
             ('doble', 'Capa doble')
         ],
-        default='Capa normal'
+        default='normal'  # Debes coincidir con el valor del primer elemento en la selección
     )
     provider_id = fields.Many2one(
         comodel_name='res.partner',
         string="Proveedor"
     )
-    product_ids = fields.Many2one(
+    product_ids = fields.Many2many(
         comodel_name='product.product',
-        string="Producto"
+        relation='box_product_rel',  # Cambiado para evitar conflictos de nombres
+        column1='box_id',
+        column2='product_id',
+        string='Productos Asociados'
     )
 
     # def _compute_display_name(self):

@@ -1,23 +1,29 @@
 from odoo import models, fields
 
 
-class Contact_irh(models.Model):
-    # hereda de contacto y productos (stock)
-    _inherit = ['res.partner']
+class Contact_irh(models.Model):  # Corrección en el nombre del modelo
+    _inherit = 'res.partner'
 
-    # campos
     age = fields.Integer(string="Edad")
-    products = fields.One2many(
-        comodel_name='stock.picking',  # tabla a la que se relaciona
-        inverse_name='contact_id',  # campo de la tabla relacionada
-        string="Productos"  # nombre del campo
+    product_ids = fields.One2many(
+        comodel_name='product.product',
+        inverse_name='contact_id',
+        string="Productos"
     )
 
-
-class Stock_irh(models.Model):
-    _inherit = ['stock.picking']
+class Stock_irh(models.Model):  # Corrección en el nombre del modelo
+    _inherit = 'product.product'
 
     contact_id = fields.Many2one(
-        comodel_name='res.partner',  # tabla a la que se relaciona
-        string="Contacto"  # nombre del campo
+        comodel_name='res.partner',
+        inverse_name='product_ids',
+        string="Contacto"
     )
+    box_ids = fields.Many2many(
+        comodel_name='to.box',
+        relation='box_product_rel',  # Cambiado para evitar conflictos de nombres
+        column1='product_id',
+        column2='box_id',
+        string='Cajas Asociadas'
+    )
+

@@ -47,11 +47,6 @@
                 <field name="product_ids" type="col"/>
                 <field name="provider_id" type="row"/>
                 <field name="product_ids" type="measure" operator="count"/>
-
-                <!-- provider_id=1 -->
-<!--                <filter name="provider_filter" string="Filtrar por Proveedor" >-->
-<!--&lt;!&ndash;                    <domain>[('provider_id', '=', 1)]</domain>&ndash;&gt;-->
-<!--                </filter>-->
             </pivot>
         </field>
     </record>
@@ -79,7 +74,7 @@
             <field name="name">Stats</field>
             <field name="res_model">to.box</field>
             <field name="view_mode">pivot</field>
-<!--            <field name="domain">[('provider_id', '=', '1')]</field>-->
+            <field name="domain">[('provider_id', '=', 1)]</field>
         </record>
 
         <!--  MENUS principal-->
@@ -97,8 +92,8 @@
         <menuitem id="box_menu_form" name="Crear Caja"
             action="box_action_form"  parent="box_menu_main" />
         <!-- menu pivot -->
-        <menuitem id="box_menu_pivot" name="Pivot"
-            action="box_action_pivot" parent="box_menu_main" />
+<!--        <menuitem id="box_menu_pivot" name="Pivot"-->
+<!--            action="box_action_pivot" parent="box_menu_main" />-->
 
 
     </data>

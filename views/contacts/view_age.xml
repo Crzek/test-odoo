@@ -5,25 +5,23 @@
         <field name="model">res.partner</field>
         <field name="inherit_id" ref="base.view_partner_form" />
         <field name="arch" type="xml">
-
-            <!-- insertar despues del campo name  (after /before) -->
-            <field name="function" position="before">
+            <!-- Insertar después del campo "name" -->
+            <xpath expr="//field[@name='name']" position="after">
                 <field name="age" placeholder="Introduce edad" />
-            </field>
-
+            </xpath>
         </field>
     </record>
 
-    <!-- nueva pestaña llamada productos comprados -->
+    <!-- Nueva pestaña llamada "Productos comprados" -->
     <record id="stock_picking_inh_notebook" model="ir.ui.view">
         <field name="name">stock.picking.inh.notebook</field>
         <field name="model">res.partner</field>
         <field name="inherit_id" ref="base.view_partner_form" />
         <field name="arch" type="xml">
-            <xpath expr="//sheet/notebook/page[@name='internal_notes']" position="after">
+          <xpath expr="//sheet/notebook/page[@name='internal_notes']" position="after">
                 <page name="products_list" string="Productos comprados">
                     <tree>
-                        <field name="products" domain="[('contact_id', '=', parent_id)]" />
+                        <field name="product_ids" domain="[('contact_id', '=', parent_id)]" />
                     </tree>
                 </page>
             </xpath>
